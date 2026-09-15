@@ -1,0 +1,58 @@
+[2026/08/18 21:15:38] INFO     Canonicalized data set    recsys_data_set.py:205
+                               already exists, skipping                        
+                               download and                                    
+                               canonicalization.                               
+RecSysDataSet(name='MovieLensLatestSmall', variant='RawData', interactions=100836, columns=4, lineage_steps=0)
+Interactions: 100836
+Rating range: 0.5 to 5.0
+                      INFO     Subsampling data set to fraction subsample.py:42
+                               0.05.                                           
+                      INFO     Number of interactions before:   subsample.py:43
+                               100836                                          
+                      INFO     Number of interactions after:    subsample.py:49
+                               5042                                            
+[2026/08/18 21:15:41] INFO     Making data set        feedback_conversion.py:21
+                               implicit with                                   
+                               threshold 3.                                    
+                      INFO     Minimum rating: 0.5    feedback_conversion.py:24
+                      INFO     Maximum rating: 5.0    feedback_conversion.py:25
+                      INFO     Number of interactions feedback_conversion.py:26
+                               before: 5042                                    
+                      INFO     Number of interactions feedback_conversion.py:44
+                               after: 4038                                     
+                      INFO     Reusing existing env 'LensKit_env' at envs.py:48
+                               C:\Users\user\.omnirec\data\envs\Lens           
+                               Kit_env                                         
+                      INFO     Starting runner...            coordinator.py:272
+[2026/08/18 21:15:43] INFO     Runner started with pid:      coordinator.py:297
+                               19588                                           
+                      INFO     Connecting to runner...       coordinator.py:135
+                      INFO     Running phase 'Fit' for       coordinator.py:402
+                               MovieLensLatestSmall/PopScore                   
+                               r                                               
+[2026/08/18 21:15:53] INFO     Running phase 'Predict' for   coordinator.py:402
+                               MovieLensLatestSmall/PopScore                   
+                               r                                               
+[2026/08/18 21:16:03] INFO     Running phase 'Evaluate' for  coordinator.py:402
+                               MovieLensLatestSmall/PopScore                   
+                               r                                               
+                      INFO     MovieLensLatestSmall/PopScore coordinator.py:373
+                               r done!                                         
+                      INFO     Stopping runner...            coordinator.py:445
+   MovieLensLatestSmall-747b6d6a: Evaluation Results   
++-----------------------------------------------------+
+| Algorithm                     | Recall@10           |
+|-------------------------------+---------------------|
+| LensKit.PopScorer-f4aa5539-42 | 0.03174603174603175 |
++-----------------------------------------------------+
+
+Evaluation results:
+                       algorithm  fold    name   k     value
+0  LensKit.PopScorer-f4aa5539-42  None  Recall  10  0.031746
+Saved results to C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\out_2026-08-18T21-11-34\workspace\working\recall_at_10_results.csv
+Saved plot to C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\out_2026-08-18T21-11-34\workspace\working\recall_at_10_plot.png
+
+Recall@10 summary:
+                       algorithm     value
+0  LensKit.PopScorer-f4aa5539-42  0.031746
+Execution time: 26 seconds (time limit is an hour).

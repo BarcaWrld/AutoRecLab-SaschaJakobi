@@ -1,0 +1,20 @@
+ID: 3fabdc1c12684bad94c632375bb6354b
+Position: 1
+Score: 0.375
+Is Buggy: True
+Is Satisfactory: False
+Execution Time: 39.21371030807495
+Lines of Code: 109
+Empty Lines: 16
+Comment Lines: 1
+Total Characters: 3734
+Libraries Imported: math, pandas, os, matplotlib, omnirec, pathlib, json
+Count of Libraries Imported: 7
+Functions: 2
+Classes: 0
+Average Arguments per Function: 0.5
+Variable Assignments: 17
+Loops: 0
+Conditions: 5
+Insertions: 67
+Deletions: 42

@@ -1,0 +1,18 @@
+{
+    "jobs": {
+        "MovieLens100K-78811d22|LensKit.ItemKNNScorer-640367dc-22": {
+            "next_phase": 0,
+            "next_fold": null,
+            "config": {
+                "max_nbrs": 40,
+                "min_nbrs": 1,
+                "center": true
+            }
+        },
+        "MovieLens100K-78811d22|LensKit.PopScorer-f4aa5539-22": {
+            "next_phase": 3,
+            "next_fold": null,
+            "config": {}
+        }
+    }
+}

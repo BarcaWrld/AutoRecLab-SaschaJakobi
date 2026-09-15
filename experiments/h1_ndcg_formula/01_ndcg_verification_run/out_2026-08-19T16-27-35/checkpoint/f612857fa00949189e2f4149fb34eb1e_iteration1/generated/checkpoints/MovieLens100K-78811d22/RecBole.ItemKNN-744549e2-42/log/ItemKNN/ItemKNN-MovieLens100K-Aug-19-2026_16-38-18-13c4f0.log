@@ -1,0 +1,2 @@
+Wed 19 Aug 2026 16:38:18 INFO  [Training]: train_batch_size = [1024] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Wed 19 Aug 2026 16:38:18 INFO  [Evaluation]: eval_batch_size = [32768] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]

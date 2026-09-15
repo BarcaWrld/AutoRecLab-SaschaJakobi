@@ -1,0 +1,9 @@
+{
+    "jobs": {
+        "MovieLensLatestSmall-747b6d6a|LensKit.PopScorer-f4aa5539-42": {
+            "next_phase": 3,
+            "next_fold": null,
+            "config": {}
+        }
+    }
+}

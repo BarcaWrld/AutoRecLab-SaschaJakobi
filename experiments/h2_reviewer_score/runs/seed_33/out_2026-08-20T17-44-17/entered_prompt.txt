@@ -1,0 +1,1 @@
+Compare ItemKNN and a popularity baseline on MovieLens100K using OmniRec's UserHoldout split with random seed 33, and report NDCG@10 and Precision@10 for both algorithms.

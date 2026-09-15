@@ -1,0 +1,43 @@
+[2026/08/20 17:47:46] INFO     Canonicalized data set    recsys_data_set.py:205
+                               already exists, skipping                        
+                               download and                                    
+                               canonicalization.                               
+Loaded dataset: RecSysDataSet(name='MovieLens100K', variant='RawData', interactions=100000, columns=4, lineage_steps=0)
+Num interactions: 100000
+[2026/08/20 17:47:47] INFO     Reusing existing env 'LensKit_env' at envs.py:48
+                               C:\Users\user\.omnirec\data\envs\Lens           
+                               Kit_env                                         
+                      INFO     Starting runner...            coordinator.py:272
+[2026/08/20 17:47:48] INFO     Runner started with pid:      coordinator.py:297
+                               18760                                           
+                      INFO     Connecting to runner...       coordinator.py:135
+                      INFO     Running phase 'Fit' for       coordinator.py:402
+                               MovieLens100K/ItemKNNScorer                     
+[2026/08/20 17:47:58] INFO     Running phase 'Predict' for   coordinator.py:402
+                               MovieLens100K/ItemKNNScorer                     
+[2026/08/20 17:48:08] INFO     Running phase 'Evaluate' for  coordinator.py:402
+                               MovieLens100K/ItemKNNScorer                     
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\runner\coordinator.py", line 212, in run
+    self.run_split(
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\runner\coordinator.py", line 365, in run_split
+    self._evaluator.run_evaluation(
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\runner\evaluation.py", line 54, in run_evaluation
+    mr = m.calculate(predictions, test)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\metrics\ranking.py", line 74, in calculate
+    top_k_dict = self.make_topk_dict(predictions)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\metrics\ranking.py", line 24, in make_topk_dict
+    for user, group in predictions.sort_values("rank").groupby("user"):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\pandas\core\frame.py", line 7211, in sort_values
+    k = self._get_label_or_level_values(by[0], axis=axis)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\pandas\core\generic.py", line 1914, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'rank'
+                      CRITICAL Stopping runner...            coordinator.py:445
+run_omnirec returned: <class 'NoneType'>
+None
+Execution time: 24 seconds (time limit is an hour).

@@ -1,0 +1,20 @@
+ID: 3964d81c91414293973abff233ebffcc
+Position: 6
+Score: 0.375
+Is Buggy: True
+Is Satisfactory: False
+Execution Time: 51.327465534210205
+Lines of Code: 106
+Empty Lines: 21
+Comment Lines: 0
+Total Characters: 3521
+Libraries Imported: os, pathlib, matplotlib, omnirec, pandas
+Count of Libraries Imported: 5
+Functions: 5
+Classes: 0
+Average Arguments per Function: 1.0
+Variable Assignments: 27
+Loops: 2
+Conditions: 9
+Insertions: 60
+Deletions: 36

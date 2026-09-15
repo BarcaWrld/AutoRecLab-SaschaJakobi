@@ -1,0 +1,64 @@
+C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\ray\_private\parameter.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\ray\_private\parameter.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+command line args [C:\Users\user\.omnirec\certs\server-key.pem C:\Users\user\.omnirec\certs\server-cert.pem] will not be used in RecBole
+C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\recbole\data\dataset\dataset.py:648: ChainedAssignmentError: A value is being set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+Such inplace method never works to update the original DataFrame or Series, because the intermediate object on which we are setting values always behaves as a copy (due to Copy-on-Write).
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' instead, to perform the operation inplace on the original object, or try to avoid an inplace operation using 'df[col] = df[col].method(value)'.
+
+See the documentation for a more detailed explanation: https://pandas.pydata.org/pandas-docs/stable/user_guide/copy_on_write.html
+  feat[field].fillna(value=0, inplace=True)
+C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\recbole\data\dataset\dataset.py:2202: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\utils\tensor_numpy.cpp:212.)
+  new_data[k] = torch.LongTensor(value)
+19 Aug 16:38    INFO  [Training]: train_batch_size = [1024] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+19 Aug 16:38    INFO  [Evaluation]: eval_batch_size = [32768] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\concurrent\futures\process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\omnirec_runner\runner.py", line 168, in _fit_job
+    self.setup_fit()
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec_runner\recbole_runner.py", line 114, in setup_fit
+    self.trainer: Trainer = get_trainer(config["MODEL_TYPE"], config["model"])(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\recbole\trainer\trainer.py", line 115, in __init__
+    self.tensorboard = get_tensorboard(self.logger)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\recbole\utils\utils.py", line 231, in get_tensorboard
+    writer = SummaryWriter(dir_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\torch\utils\tensorboard\writer.py", line 250, in __init__
+    self._get_file_writer()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\torch\utils\tensorboard\writer.py", line 265, in _get_file_writer
+    self.file_writer = FileWriter(
+                       ^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\torch\utils\tensorboard\writer.py", line 76, in __init__
+    self.event_writer = EventFileWriter(
+                        ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 100, in __init__
+    self.flush()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 125, in flush
+    self._async_writer.flush()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 194, in flush
+    self._check_worker_status()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 212, in _check_worker_status
+    raise exception
+  File "C:\Users\user\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 244, in run
+    self._run()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 275, in _run
+    self._record_writer.write(data)
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\record_writer.py", line 40, in write
+    self._writer.write(header + header_crc + data + footer_crc)
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\compat\tensorflow_stub\io\gfile.py", line 770, in write
+    self.fs.write(self.filename, file_content, self.binary_mode)
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\compat\tensorflow_stub\io\gfile.py", line 157, in write
+    self._write(filename, file_content, "wb" if binary_mode else "w")
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\compat\tensorflow_stub\io\gfile.py", line 171, in _write
+    with io.open(filename, mode, encoding=encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: b'log_tensorboard\\ItemKNN-MovieLens100K-Aug-19-2026_16-38-18-13c4f0\\events.out.tfevents.1787150298.NB-HO-SJ.568.0'

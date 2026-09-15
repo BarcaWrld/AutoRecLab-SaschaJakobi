@@ -1,0 +1,1 @@
+Build a simple ItemKNN recommender on the MovieLens100K dataset using OmniRec's UserHoldout split, and report NDCG@10.

@@ -1,0 +1,12 @@
+{
+    "jobs": {
+        "MovieLens100K-63ca0866|LensKit.ItemKNNScorer-dd803d4b-33": {
+            "next_phase": 2,
+            "next_fold": null,
+            "config": {
+                "max_nbrs": 20,
+                "min_nbrs": 5
+            }
+        }
+    }
+}

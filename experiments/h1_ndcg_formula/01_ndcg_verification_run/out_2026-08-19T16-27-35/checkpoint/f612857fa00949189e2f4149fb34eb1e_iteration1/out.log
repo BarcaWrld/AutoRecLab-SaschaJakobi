@@ -1,0 +1,119 @@
+[2026/08/19 16:37:30] INFO     Canonicalized data set    recsys_data_set.py:205
+                               already exists, skipping                        
+                               download and                                    
+                               canonicalization.                               
+                      INFO     Making data set        feedback_conversion.py:21
+                               implicit with                                   
+                               threshold 3.                                    
+                      INFO     Minimum rating: 1      feedback_conversion.py:24
+                      INFO     Maximum rating: 5      feedback_conversion.py:25
+                      INFO     Number of interactions feedback_conversion.py:26
+                               before: 100000                                  
+                      INFO     Number of interactions feedback_conversion.py:44
+                               after: 82520                                    
+Running experiment...
+[2026/08/19 16:37:32] INFO     Creating env 'RecBole_env' at         envs.py:51
+                               C:\Users\user\.omnirec\data\envs\RecB           
+                               ole_env                                         
+[2026/08/19 16:37:33] INFO     Installing packages...                envs.py:57
+[2026/08/19 16:38:08] INFO     Done.                                 envs.py:63
+                      INFO     Starting runner...            coordinator.py:272
+[2026/08/19 16:38:15] INFO     Runner started with pid:      coordinator.py:297
+                               20252                                           
+                      INFO     Connecting to runner...       coordinator.py:135
+                      INFO     Running phase 'Fit' for       coordinator.py:402
+                               MovieLens100K/ItemKNN                           
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\runner\coordinator.py", line 212, in run
+    self.run_split(
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\runner\coordinator.py", line 347, in run_split
+    self.wait_for_job(root._fit, root)
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec\runner\coordinator.py", line 385, in wait_for_job
+    state = root._status(job_id)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\rpyc\core\netref.py", line 239, in __call__
+    return syncreq(_self, consts.HANDLE_CALL, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\rpyc\core\netref.py", line 63, in syncreq
+    return conn.sync_request(handler, proxy, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\rpyc\core\protocol.py", line 744, in sync_request
+    return _async_res.value
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\rpyc\core\async_.py", line 111, in value
+    raise self._obj
+_get_exception_class.<locals>.Derived: [WinError None] No such file or directory: b'log_tensorboard\\ItemKNN-MovieLens100K-Aug-19-2026_16-38-18-13c4f0\\events.out.tfevents.1787150298.NB-HO-SJ.568.0' -> None
+
+========= Remote Traceback (1) =========
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\concurrent\futures\process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\omnirec_runner\runner.py", line 168, in _fit_job
+    self.setup_fit()
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\.venv\Lib\site-packages\omnirec_runner\recbole_runner.py", line 114, in setup_fit
+    self.trainer: Trainer = get_trainer(config["MODEL_TYPE"], config["model"])(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\recbole\trainer\trainer.py", line 115, in __init__
+    self.tensorboard = get_tensorboard(self.logger)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\recbole\utils\utils.py", line 231, in get_tensorboard
+    writer = SummaryWriter(dir_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\torch\utils\tensorboard\writer.py", line 250, in __init__
+    self._get_file_writer()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\torch\utils\tensorboard\writer.py", line 265, in _get_file_writer
+    self.file_writer = FileWriter(
+                       ^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\torch\utils\tensorboard\writer.py", line 76, in __init__
+    self.event_writer = EventFileWriter(
+                        ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 100, in __init__
+    self.flush()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 125, in flush
+    self._async_writer.flush()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 194, in flush
+    self._check_worker_status()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 212, in _check_worker_status
+    raise exception
+  File "C:\Users\user\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 244, in run
+    self._run()
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\event_file_writer.py", line 275, in _run
+    self._record_writer.write(data)
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\summary\writer\record_writer.py", line 40, in write
+    self._writer.write(header + header_crc + data + footer_crc)
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\compat\tensorflow_stub\io\gfile.py", line 770, in write
+    self.fs.write(self.filename, file_content, self.binary_mode)
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\compat\tensorflow_stub\io\gfile.py", line 157, in write
+    self._write(filename, file_content, "wb" if binary_mode else "w")
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\tensorboard\compat\tensorflow_stub\io\gfile.py", line 171, in _write
+    with io.open(filename, mode, encoding=encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: b'log_tensorboard\\ItemKNN-MovieLens100K-Aug-19-2026_16-38-18-13c4f0\\events.out.tfevents.1787150298.NB-HO-SJ.568.0'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\rpyc\core\protocol.py", line 369, in _dispatch_request
+    res = self._HANDLERS[handler](self, *args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\rpyc\core\protocol.py", line 863, in _handle_call
+    return obj(*args, **dict(kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.omnirec\data\envs\RecBole_env\Lib\site-packages\omnirec_runner\runner.py", line 143, in _status
+    raise exc
+FileNotFoundError: [Errno 2] No such file or directory: b'log_tensorboard\\ItemKNN-MovieLens100K-Aug-19-2026_16-38-18-13c4f0\\events.out.tfevents.1787150298.NB-HO-SJ.568.0'
+
+[2026/08/19 16:38:25] CRITICAL Stopping runner...            coordinator.py:445
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\out_2026-08-19T16-27-35\workspace\runfile.py", line 101, in <module>
+    main()
+  File "C:\Users\user\Documents\GitHub\AutoRecLab-SaschaJakobi\out_2026-08-19T16-27-35\workspace\runfile.py", line 47, in main
+    raise RuntimeError('No results were produced by the evaluator.')
+RuntimeError: No results were produced by the evaluator.
+Program crashed with exception (see above) after 57 seconds!

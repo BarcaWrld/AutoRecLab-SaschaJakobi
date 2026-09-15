@@ -1,0 +1,1 @@
+Build a tiny popularity baseline on a small MovieLens sample and report Recall@10.

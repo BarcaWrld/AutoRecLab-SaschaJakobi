@@ -1,0 +1,11 @@
+{
+    "jobs": {
+        "MovieLens100K-78811d22|RecBole.ItemKNN-744549e2-42": {
+            "next_phase": 0,
+            "next_fold": null,
+            "config": {
+                "k": 20
+            }
+        }
+    }
+}
