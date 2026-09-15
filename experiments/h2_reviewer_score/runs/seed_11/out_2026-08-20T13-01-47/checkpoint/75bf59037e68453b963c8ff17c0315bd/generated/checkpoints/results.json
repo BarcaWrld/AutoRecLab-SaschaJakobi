@@ -1,0 +1,1 @@
+{"MovieLens100K-78811d22": [{"algorithm": "LensKit.PopScorer-f4aa5539-11", "fold": null, "name": "NDCG", "k": 10, "value": 0.11641485865818428}, {"algorithm": "LensKit.PopScorer-f4aa5539-11", "fold": null, "name": "Recall", "k": 10, "value": 0.1416039657290981}]}
